@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:47:02 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/24 19:04:06 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/24 19:26:32 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	ft_conv_x(va_list arg, t_pf *lst)
 	lst->is_int = 1;
 	ft_size_u(arg, lst);
 	lst->conv == 'x' ? format = ft_itoa_base(lst->u, "0123456789abcdef") : 0;
-	lst->conv == 'X' ? format = ft_itoa_base(lst->u, "0123456789ABCEDF") : 0;
+	lst->conv == 'X' ? format = ft_itoa_base(lst->u, "0123456789ABCDEF") : 0;
 	lst->len = ft_strlen(format);
 	format = ft_num_preci(format, lst);
 	lst->len = ft_strlen(format);
