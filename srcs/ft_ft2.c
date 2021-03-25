@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:50:29 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/24 18:30:44 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/26 04:02:11 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*itoa_printf(long long int n)
 	return (format);
 }
 
-int		ft_atoi_printf(char *format, int *i)
+int		atoi_printf(char *format, int *i)
 {
 	int		atoi;
 

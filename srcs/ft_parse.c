@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:12:27 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/24 18:52:50 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/26 04:02:50 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	check_flag(char *format, va_list arg, t_pf *lst)
 	if (format[lst->i] == '0' && !lst->minus && !lst->preci_parse)
 		lst->zero = 1;
 	if (format[lst->i] > '0' && format[lst->i] <= '9' && !lst->preci_parse)
-		lst->width = ft_atoi_printf(format, &lst->i);
+		lst->width = atoi_printf(format, &lst->i);
 	if (ft_isdigit(format[lst->i]) && lst->preci_parse)
-		lst->preci_width = ft_atoi_printf(format, &lst->i);
+		lst->preci_width = atoi_printf(format, &lst->i);
 	lst->preci_parse = 0;
 	if (format[lst->i] == '-')
 	{

@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 09:29:00 by sdunckel          #+#    #+#             */
+/*   Created: 2021/03/11 09:29:00 by taemkim          #+#    #+#             */
 /*   Updated: 2021/03/24 19:07:10 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -71,11 +71,9 @@ void			ft_join_all(char *format, char *sp, t_pf *lst);
 char			*ft_num_preci(char *format, t_pf *lst);
 void			check_sign(t_pf *lst);
 
-int				ft_atoi_printf(char *format, int *i);
+int				atoi_printf(char *format, int *i);
 char			*itoa_printf(long long int n);
 char			*ft_strdup_l(char *format, t_pf *lst);
-void			ft_set_precision(t_pf *lst);
-void			ft_reset_flags(t_pf *lst);
 
 char			*ft_c_to_str(char c);
 size_t			num_count(long long int n);
