@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:01:56 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/28 06:33:46 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/28 06:45:01 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	ft_conv_d(va_list arg, t_pf *lst)
 	lst->len = ft_strlen(format);
 	(lst->n < 0) ? lst->len++ : 0;
 	(lst->n > 0) && (lst->plus || lst->space) ? lst->len++ : 0;
+	if_n_zero(lst, format);
 	sp = ft_print_space(lst);
 	ft_join_all(format, sp, lst);
 }
