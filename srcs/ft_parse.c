@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:12:27 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/26 04:02:50 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/26 05:16:26 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	is_signal(char c)
 	|| c == 'l' || c == 'h');
 }
 
-void	check_flag(char *format, va_list arg, t_pf *lst)
+void	check_size(char *format, va_list arg, t_pf *lst)
 {
 	if (format[lst->i] == '*')
 	{
@@ -54,14 +54,14 @@ void	check_flag(char *format, va_list arg, t_pf *lst)
 	format[lst->i] == 'h' ? lst->h_count += 1 : 0;
 }
 
-int		ft_parse2(char *format, va_list arg, t_pf *lst)
+int		check_flag(char *format, va_list arg, t_pf *lst)
 {
 	char	*sp;
 	char	*c;
 
 	while (!is_flag(format[lst->i]))
 	{
-		check_flag(format, arg, lst);
+		check_size(format, arg, lst);
 		if (format[lst->i + 1] == '\0')
 			return (0);
 		if (!is_signal(format[lst->i + 1]))
@@ -86,7 +86,7 @@ void		ft_parse(char *format, va_list arg, t_pf *lst)
 {
 	lst->i++;
 	reset_flags(lst);
-	if (!ft_parse2(format, arg, lst))
+	if (!check_flag(format, arg, lst))
 		return ;
 	if (lst->width < 0)
 	{

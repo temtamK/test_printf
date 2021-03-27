@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:27:00 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/24 18:53:21 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/27 01:58:43 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	check_hex(t_pf *lst)
 	}
 }
 
-void	ft_join_all(char *format, char *sp, t_pf *lst)
+void	ft_join_all(char *str, char *sp, t_pf *lst)
 {
 	(lst->is_int && lst->zero) ? check_sign(lst) : 0;
 	if (lst->zero && lst->conv == 'p')
@@ -62,43 +62,43 @@ void	ft_join_all(char *format, char *sp, t_pf *lst)
 		put_buf(lst, "0x", 2);
 		lst->len -= 2;
 	}
-	if (lst->sharp && lst->u && lst->zero && lst->preci_width < lst->len)
+	if (lst->sharp && lst->u && !lst->zero && lst->preci_width < lst->len)
 		check_hex(lst);
 	if (lst->is_int && !lst->zero)
 		check_sign(lst);
-	put_buf(lst, format, lst->len);
+	put_buf(lst, str, lst->len);
 	if (sp && lst->minus)
 		put_buf(lst, sp, lst->sp_len);
-	free(format);
+	free(str);
 	free(sp);
 }
 
 char	*ft_print_space(t_pf *lst)
 {
-	char	*format;
+	char	*sp_str;
 	int		index;
 
 	index = 0;
 	if (lst->width < lst->len)
 		return (NULL);
-	if (!(format = ft_calloc((lst->width - lst->len + 1), sizeof(char))))
+	if (!(sp_str = ft_calloc((lst->width - lst->len + 1), sizeof(char))))
 		return (NULL);
 	if (lst->preci && lst->preci_width > lst->len)
 		lst->zero = 0;
 	while (index < lst->width - lst->len)
 	{
 		if (lst->zero)
-			format[index] = '0';
+			sp_str[index] = '0';
 		else
-			format[index] = ' ';
+			sp_str[index] = ' ';
 		index++;
 	}
 	lst->sp_len = index;
-	format[index] = '\0';
-	return (format);
+	sp_str[index] = '\0';
+	return (sp_str);
 }
 
-char	*ft_num_preci(char *format, t_pf *lst)
+char	*ft_num_preci(char *str, t_pf *lst)
 {
 	char	*tmp;
 	int		i;
@@ -107,9 +107,9 @@ char	*ft_num_preci(char *format, t_pf *lst)
 	i = 0;
 	j = 0;
 	if (!lst->preci)
-		return (format);
+		return (str);
 	if (lst->preci_width < lst->len)
-		return (format);
+		return (str);
 	if (!(tmp = ft_calloc(lst->preci_width + lst->len + 1, sizeof(char))))
 		return (NULL);
 	while (i < lst->preci_width - lst->len)
@@ -117,12 +117,12 @@ char	*ft_num_preci(char *format, t_pf *lst)
 		tmp[i] = '0';
 		i++;
 	}
-	while (format[j])
+	while (str[j])
 	{
-		tmp[i + j] = format[j];
+		tmp[i + j] = str[j];
 		j++;
 	}
 	tmp[i + j] = '\0';
-	free(format);
+	free(str);
 	return (tmp);
 }

@@ -52,9 +52,7 @@ void			put_buf(t_pf *lst, char *format, int len);
 void			print_buf(t_pf *lst);
 
 void			ft_parse(char *format, va_list arg, t_pf *lst);
-size_t			is_flag(char c);
 size_t			is_signal(char c);
-void			check_flag(char *format, va_list arg, t_pf *lst);
 
 void			ft_conv_s(va_list arg, t_pf *lst);
 void			ft_conv_d(va_list arg, t_pf *lst);
