@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:12:27 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/28 02:50:16 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/28 06:35:05 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int		check_flag(char *format, va_list arg, t_pf *lst)
 	return (1);
 }
 
-void		ft_parse(char *format, va_list arg, t_pf *lst)
+void	ft_parse(char *format, va_list arg, t_pf *lst)
 {
 	lst->i++;
 	reset_flags(lst);

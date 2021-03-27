@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:27:00 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/28 05:37:45 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/28 06:34:26 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	*ft_print_space(t_pf *lst)
 	if (lst->width < lst->len)
 		return (NULL);
 	if (!(sp_str = ft_calloc((lst->width - lst->len + 1), sizeof(char))))
-		return (NULL);;
+		return (NULL);
 	if (lst->preci && lst->preci_width > lst->len)
 		lst->zero = 0;
 	while (index < lst->width - lst->len)
