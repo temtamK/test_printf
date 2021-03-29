@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:01:56 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/29 19:40:24 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/29 19:48:35 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,6 @@ void	ft_size_u(va_list arg, t_pf *lst)
 		lst->u = (unsigned long long int)va_arg(arg, unsigned int);
 }
 
-void	if_n_zero(t_pf *lst, char *format)
-{
-	if (lst->n == 0 && lst->preci && lst->preci_width == 0 && !lst->width)
-	{
-		free(format);
-		return ;
-	}
-	else if (lst->n == 0 && lst->preci && lst->preci_width == 0)
-	{
-		free(format);
-		format = ft_strdup(" ");
-	}
-	else if (lst->n == 0 && (lst->plus || lst->space))
-		lst->len++;
-}
-
 void	ft_conv_d(va_list arg, t_pf *lst)
 {
 	char	*format;
@@ -68,8 +52,17 @@ void	ft_conv_d(va_list arg, t_pf *lst)
 	format = ft_num_preci(format, lst);
 	lst->len = ft_strlen(format);
 	(lst->n < 0) ? lst->len++ : 0;
-	(lst->n > 0) && (lst->plus || lst->space) ? lst->len++ : 0;
-	if_n_zero(lst, format);
+	(lst->n >= 0) && (lst->plus || lst->space) ? lst->len++ : 0;
+	if (lst->n == 0 && lst->preci && lst->preci_width == 0 && !lst->width)
+	{
+		free(format);
+		return ;
+	}
+	else if (lst->n == 0 && lst->preci && lst->preci_width == 0)
+	{
+		free(format);
+		format = ft_strdup(" ");
+	}
 	sp = ft_print_space(lst);
 	ft_join_all(format, sp, lst);
 }
