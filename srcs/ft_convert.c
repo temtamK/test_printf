@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:47:02 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/30 00:11:25 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/30 00:17:30 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ void	ft_conv_n(va_list arg, t_pf *lst)
 		n3 = (int *)va_arg(arg, int *);
 	if (!n1 && !n2 && !n3)
 		return ;
-	*n1 ? *n = lst->ret : 0;
-	*n2 ? *n = lst->ret : 0;
-	*n3 ? *n = lst->ret : 0;
+	n1 ? *n1 = lst->ret : 0;
+	n2 ? *n2 = lst->ret : 0;
+	n3 ? *n3 = lst->ret : 0;
 }
 
 void	ft_conv_x(va_list arg, t_pf *lst)
