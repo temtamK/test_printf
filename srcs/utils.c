@@ -6,20 +6,25 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:23:23 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/28 02:50:44 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/29 21:07:55 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char		*ft_c_to_str(char c)
+size_t		u_num_count(unsigned long long int n)
 {
-	char	*s;
+	size_t		len;
 
-	s = ft_calloc(2, sizeof(char));
-	s[0] = c;
-	s[1] = '\0';
-	return (s);
+	len = 0;
+	if (!n)
+		len++;
+	while (n)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
 }
 
 size_t		num_count(long long int n)
@@ -52,12 +57,12 @@ size_t		num_count_base(long long int n, char *base)
 	return (len);
 }
 
-char		*ft_uitoa(long long int n)
+char		*ft_uitoa(unsigned long long int n)
 {
 	char		*str;
 	int			num_len;
 
-	num_len = num_count(n);
+	num_len = u_num_count(n);
 	if (!(str = ft_calloc((num_len + 1), sizeof(char))))
 		return (NULL);
 	str[num_len] = '\0';
