@@ -6,11 +6,16 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:01:56 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/29 21:18:47 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/29 23:25:18 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int		ig(t_pf *lst)
+{
+	return (lst->n == 0 && lst->preci && lst->preci_width == 0);
+}
 
 void	ft_size_int(va_list arg, t_pf *lst)
 {
@@ -38,11 +43,6 @@ void	ft_size_u(va_list arg, t_pf *lst)
 		lst->u = (unsigned long long int)((unsigned short)va_arg(arg, int));
 	else
 		lst->u = (unsigned long long int)va_arg(arg, unsigned int);
-}
-
-int		ig(t_pf *lst)
-{
-	return (lst->n == 0 && lst->preci && lst->preci_width == 0);
 }
 
 void	ft_conv_d(va_list arg, t_pf *lst)

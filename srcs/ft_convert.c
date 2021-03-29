@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:47:02 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/28 02:49:49 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/30 00:05:10 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,28 @@ void	ft_conv_c(va_list arg, t_pf *lst)
 
 void	ft_conv_n(va_list arg, t_pf *lst)
 {
-	long long int	*n;
+	long long int	*n1;
+	long int		*n2;
+	int				*n3;
 
+	n1 = NULL;
+	n2 = NULL;
+	n3 = NULL;
 	if (lst->l_count >= 2)
-		n = (long long int *)va_arg(arg, long long int *);
+		n1 = (long long int *)va_arg(arg, long long int *);
 	else if (lst->l_count == 1)
-		n = (long long int *)va_arg(arg, long int *);
+		n2 = (long int *)va_arg(arg, long int *);
 	else if (lst->h_count && ((lst->h_count % 2) == 0))
-		n = (long long int *)((char *)va_arg(arg, int *));
+		n3 = (int *)((char *)va_arg(arg, int *));
 	else if (lst->h_count && ((lst->h_count % 2) != 0))
-		n = (long long int *)((short *)va_arg(arg, int *));
+		n3 = (int *)((short *)va_arg(arg, int *));
 	else
-		n = (long long int *)va_arg(arg, int *);
-	if (!n)
+		n3 = (int *)va_arg(arg, int *);
+	if (!n1 && !n2 && !n3)
 		return ;
-	*n = lst->ret;
+	*n1 ? *n1 = lst->ret : 0;
+	*n2 ? *n2 = lst->ret : 0;
+	*n3 ? *n3 = lst->ret : 0;
 }
 
 void	ft_conv_x(va_list arg, t_pf *lst)
