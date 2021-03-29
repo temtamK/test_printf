@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:27:00 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/28 06:34:26 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/29 22:21:56 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ char	*ft_print_space(t_pf *lst)
 		lst->zero = 0;
 	while (index < lst->width - lst->len)
 	{
-		if (lst->zero)
+		if (lst->zero || lst->conv == '%')
 			sp_str[index] = '0';
 		else
 			sp_str[index] = ' ';
