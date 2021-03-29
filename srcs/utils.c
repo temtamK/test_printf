@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:23:23 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/29 21:24:48 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/29 21:27:47 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ size_t		num_count(long long int n)
 size_t		num_count_base(unsigned long long int n, char *base)
 {
 	size_t			len;
-	long long int	base_len;
+	unsigned long long int	base_len;
 
 	len = 1;
 	base_len = ft_strlen(base);
