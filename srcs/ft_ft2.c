@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:50:29 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/28 02:51:10 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/29 21:14:40 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,14 @@ char	*ft_strdup_l(char *format, t_pf *lst)
 	}
 	str[i] = '\0';
 	return (str);
+}
+
+char	*ft_c_to_str(char c)
+{
+	char	*s;
+
+	s = ft_calloc(2, sizeof(char));
+	s[0] = c;
+	s[1] = '\0';
+	return (s);
 }

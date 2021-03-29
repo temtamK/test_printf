@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 19:21:05 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/29 21:08:35 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/29 21:13:45 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char			*itoa_printf(long long int n);
 char			*ft_strdup_l(char *format, t_pf *lst);
 char			*ft_c_to_str(char c);
 
-size_t			u_num_count(long long int n);
+size_t			u_num_count(unsigned long long int n);
 size_t			num_count(long long int n);
 char			*ft_uitoa(unsigned long long int n);
 char			*ft_itoa_base(long long int n, char *base);
