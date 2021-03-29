@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 18:27:51 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/28 02:50:41 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/29 23:19:21 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	init_lst(t_pf *lst)
 	lst->is_int = 0;
 	lst->h_count = 0;
 	lst->l_count = 0;
+	lst->true_zero = 0;
 	lst->n = 0;
 	lst->u = 0;
 	lst->i = 0;
@@ -60,6 +61,7 @@ void	reset_flags(t_pf *lst)
 	lst->is_int = 0;
 	lst->h_count = 0;
 	lst->l_count = 0;
+	lst->true_zero = 0;
 	lst->n = 0;
 	lst->u = 0;
 }

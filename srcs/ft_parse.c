@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:12:27 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/29 22:31:54 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/29 23:20:09 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void	ft_parse(char *format, va_list arg, t_pf *lst)
 	}
 	if (lst->preci_width < 0)
 		lst->preci = 0;
+	lst->zero ? lst->true_zero = 1 : 0;
 	lst->preci && lst->preci_width >= 0 ? lst->zero = 0 : 0;
 	lst->conv = format[lst->i];
 	format[lst->i] == 'c' ? ft_conv_c(arg, lst) : 0;

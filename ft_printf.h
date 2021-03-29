@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 19:21:05 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/29 23:01:53 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/29 23:18:49 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct	s_pf
 	int							is_int;
 	int							h_count;
 	int							l_count;
+	int							true_zero;
 	long long int				n;
 	unsigned long long int		u;
 	int							i;
