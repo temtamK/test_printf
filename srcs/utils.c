@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:23:23 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/29 21:07:55 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/29 21:24:48 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ size_t		num_count(long long int n)
 	return (len);
 }
 
-size_t		num_count_base(long long int n, char *base)
+size_t		num_count_base(unsigned long long int n, char *base)
 {
 	size_t			len;
 	long long int	base_len;
@@ -74,7 +74,7 @@ char		*ft_uitoa(unsigned long long int n)
 	return (str);
 }
 
-char		*ft_itoa_base(long long int n, char *base)
+char		*ft_itoa_base(unsigned long long int n, char *base)
 {
 	char		*str;
 	int			num_len;
