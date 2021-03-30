@@ -6,7 +6,7 @@
 /*   By: taemkim <taemkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:47:02 by taemkim           #+#    #+#             */
-/*   Updated: 2021/03/30 00:17:30 by taemkim          ###   ########.fr       */
+/*   Updated: 2021/03/30 16:39:47 by taemkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,10 @@ void	ft_conv_c(va_list arg, t_pf *lst)
 
 void	ft_conv_n(va_list arg, t_pf *lst)
 {
-	long long int	*n;
 	long long int	*n1;
 	long int		*n2;
 	int				*n3;
 
-	n = NULL;
 	n1 = NULL;
 	n2 = NULL;
 	n3 = NULL;
